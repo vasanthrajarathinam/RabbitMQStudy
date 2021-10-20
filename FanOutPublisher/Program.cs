@@ -1,4 +1,4 @@
-﻿using System;
+﻿        using System;
 using System.Text;
 using RabbitMQ.Client;
 
@@ -46,6 +46,10 @@ namespace FanOutPublisher
 
             channel.BasicPublish("ex.fanout", "", null, Encoding.UTF8.GetBytes("Message 1"));
             channel.BasicPublish("ex.fanout", "", null, Encoding.UTF8.GetBytes("Message 2"));
+
+
+            Console.WriteLine("press any key to exit");
+            Console.ReadKey();
 
             channel.QueueDelete("my.queue1");
             channel.QueueDelete("my.queue2");
