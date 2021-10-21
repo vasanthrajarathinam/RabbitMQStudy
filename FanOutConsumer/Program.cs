@@ -42,7 +42,7 @@ namespace FanOutConsumer
         private static void Consumer_Received(object sender, BasicDeliverEventArgs e)
         {
             string message = Encoding.UTF8.GetString(e.Body.ToArray());
-            Console.WriteLine("Message:" + message);
+            Console.WriteLine("Message:" + message);        
             channel.BasicNack(e.DeliveryTag, false,false);
         }
     }
